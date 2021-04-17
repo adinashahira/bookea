@@ -1,0 +1,92 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="unlogged.master.cs" Inherits="unlogged" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" type="text/css" href="assets/master.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+
+    <title>Bookea - Love Books</title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <style>
+        @media screen and (max-width: 700px) {
+            .row, .navbar {
+                flex-direction: column;
+            }
+        }
+        .auto-style1 {
+            background: #FE6F4C;
+            padding: 7px;
+            font-family: corbel;
+            color: white;
+            display: inline-block;
+            border: 1px solid white;
+            font-size: 20px;
+            letter-spacing: 2px;
+        }
+    </style>
+
+</head>
+<body>
+    <form id="form1" runat="server">
+
+        <div id="topnav">
+            <asp:TextBox ID="txtSearch" runat="server" Width="50%" placeholder="Search something"></asp:TextBox>&nbsp;&nbsp;
+            <asp:LinkButton ID="btnSearch" runat="server" OnClick="btnSearch_Click" CausesValidation="False"><i class="fa fa-search" style="font-size:30px; color:white"></i></asp:LinkButton>
+        </div>
+
+        <div class="row">
+            <div class="side">
+                <div id="navbar">
+                    <center>
+                        <div id="nav">
+                            <ul>
+                            <li><a href="Default.aspx">Home</a></li>
+                            <li><a href="browse.aspx">Browse</a></li><br />
+
+                            <li>Bookea est 2020 by adglory (c)</li>
+                            </ul><br /><br />
+
+                        <div class="sideHeader">Log In</div><br /><br />
+                            <center><asp:TextBox ID="txtUser" runat="server" placeholder="Username"></asp:TextBox></center>
+                            <center><asp:TextBox ID="txtPass" runat="server" placeholder="Password" TextMode="Password"></asp:TextBox></center>
+                            &nbsp;
+                            <asp:Button ID="btnLogin" runat="server" Text="Log In" CssClass="btnAffirmative" Width="99px" OnClick="btnLogin_Click" CausesValidation="False"></asp:Button>
+                            &nbsp;&nbsp;&nbsp;
+                            <asp:Button ID="btnSignUp" runat="server" Text="Sign Up" CssClass="btnAffirmative" Width="103px" OnClick="btnSignUp_Click" CausesValidation="False"></asp:Button>
+                            <br /><br />
+
+                        <br /><div class="sideHeader">Browse by Genre</div><br />
+                        <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server"></asp:ContentPlaceHolder>
+                            <center><asp:GridView ID="GridView1" runat="server" AutoGenerateColumns="False" DataKeyNames="genreName" DataSourceID="SqlDataSource1" CellPadding="3" BorderStyle="None" GridLines="None" ShowHeader="False" Font-Size="Medium">
+    <Columns>
+            <asp:HyperLinkField DataNavigateUrlFields="genreName" DataNavigateUrlFormatString="browse.aspx?genreName={0}" DataTextField="genreName" />    </Columns>
+        <EditRowStyle BorderStyle="None" />
+                    <HeaderStyle BorderStyle="None" />
+                    <RowStyle BorderStyle="None" />
+</asp:GridView></center>
+<asp:SqlDataSource ID="SqlDataSource1" runat="server" ConnectionString="<%$ ConnectionStrings:bookea1ConnectionString %>" SelectCommand="SELECT [genreName] FROM [tblGenre]"></asp:SqlDataSource>
+                        </div>
+                    </center><br />
+                </div>
+            </div>
+
+            <div class="main">
+                <div id="header">Bookea</div>
+
+                <div id="container">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+                </div>
+            </div>
+
+        </div>
+
+    </form>
+</body>
+</html>
+

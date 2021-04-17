@@ -1,0 +1,60 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="admin.master.cs" Inherits="admin" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title>Bookea Administration</title>
+
+    <!-- External CSS -->
+    <link rel="stylesheet" type="text/css" href="assets/master.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
+
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+
+    <style>
+        @media screen and (max-width: 700px) {
+            .row, .navbar {
+                flex-direction: column;
+            }
+        }
+    </style>
+
+</head>
+<body>
+
+    <form id="form1" runat="server">
+        <div id="topnav-admin">
+            <br /><br /><br />
+        </div>
+
+        <div class="row">
+            <div class="side">
+                <div id="navbar">
+                    <center>
+                        <div id="nav">
+                            <ul>
+                            <li><a href="manage.aspx">Manage</a></li>
+                            <li><a href="freepass.aspx">Freepass</a></li>
+                            <li><a href="adminlog.aspx">Log</a></li>
+                            <li><a href="upload.aspx">Upload</a></li>
+                            <li><a href="Default.aspx">Log Out</a></li>
+                            </ul>
+                    </center>
+                </div>
+            </div>
+
+            <div class="main">
+                <div id="header">Bookea</div>
+                <div id="container">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server"></asp:ContentPlaceHolder>
+                </div>
+            </div>
+
+        </div>
+
+    </form>
+
+</body>
+</html>

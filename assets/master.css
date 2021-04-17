@@ -1,0 +1,549 @@
+﻿/* CONTENTS 
+
+1. Body
+2. Header
+3. Navbar
+    3.1 Top Nav
+    3.2 Side Nav
+4. Content
+5. Footer
+6. Buttons
+7. Browse
+8. Register
+9. Admin
+
+*/
+
+*
+{
+	box-sizing: border-box;
+}
+
+body
+{
+	background-image: url(../img/bg.jpg);
+	background-attachment: fixed;
+	background-position: left-top;
+	background-repeat: no-repeat;
+
+    font-family: calibri;
+    font-size: 14px;
+    letter-spacing: 2px;
+    color: #3b3b3b;
+}
+
+h1
+{
+	background-color: #91CCFF;
+	width: 10px;
+	height: auto;
+	font-family: calibri; 
+	color: #FE6F4C;
+	letter-spacing: 3px;
+	text-shadow: 2px 2px 1px black;
+	border-left-width: 20px;
+	border-left-style: solid;
+	border-left-color: black;
+	border-top: 1px solid black;
+	border-right: 1px solid black;
+	border-bottom: 1px solid black;
+	box-shadow: 2px 2px 5px #fe6f4c;
+	padding: 4px;
+    position: absolute;
+}
+
+b
+{
+	color: #6A68FF;
+	font-weight: bold;
+}
+
+
+a
+{
+	color: #FF515B;
+    cursor: pointer;
+}
+
+a:hover
+{
+	text-shadow: 2px 2px 2px #6a68ff;
+	text-decoration: underline;
+}
+
+ul 
+{
+	list-style-type: disc;
+}
+
+ul li 
+{
+	font-family: calibri;
+	color: #AE40FF;
+	letter-spacing: 2px;
+	line-height: 20px;
+}
+
+input[type=text], input[type=password]
+  {
+	  padding: 7px;
+	  margin: 5px 0 22px 0;
+	  display: inline-block;
+	  border: 1px solid;
+	  border-color: #000;
+	  width: auto;
+  }
+
+.textbox
+{
+    border:none;
+}
+
+/* Layout */
+.row
+{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 40px;
+
+}
+
+.side
+{
+    flex: 30%;
+    padding: 20px;
+}
+
+.main
+{
+    flex: 70%;
+    padding: 20px;
+}
+
+.footer
+{
+    padding: 20px;
+  text-align: center;
+  background: #ddd;
+}
+
+placeholder
+{
+    font-family: calibri;
+    font-size: 12px;
+    letter-spacing: 2px;
+    color: #3b3b3b;
+}
+
+
+/* 1. Body */
+
+#container
+{
+	background-color: white;
+	border: 3px solid #FE6F4C;
+	border-radius: 15px;
+	width: 1000px;
+	height: auto;
+	padding: 80px 10px;
+	margin: 110px auto auto 300px;
+	z-index: 1;
+}
+
+#readercontainer
+{
+    	background-color: white;
+	border: 3px solid #FE6F4C;
+	border-radius: 15px;
+	width: 80%;
+	height: auto;
+	padding: 10px 10px;
+	margin: 250px auto;
+}
+
+/* 2. Header */
+
+#header
+{
+	font-family: consolas;
+	font-size: 150px;
+	color: black;
+	position: absolute;
+	z-index: 2;
+	margin: auto;
+	top: 90px;
+	left: 600px;
+	letter-spacing: 10px;
+	text-shadow: 10px 6px 20px #4C98FE;
+}
+
+
+/* 3.1 Navbar - Top Nav */
+#topnav 
+{
+    background-color: #91CCFF;
+    margin-top: -10px;
+    margin-left:-10px;
+    margin-right: -10px;
+    width: 101.2%;
+    display: flex;
+    padding: 10px 20% 6px 40%;
+}
+
+#topnav a 
+{
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+#topnav a:hover
+{
+    background-color:#fff;
+    color: #000;
+}
+
+#topnav a.active 
+{
+    background-color: #FE6F4C;
+    color: black;
+}
+
+.sticky
+{
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.sticky + .content
+{
+    padding-top: 60px;
+}
+
+
+/* 3.2 Navbar - Side Nav */
+
+#navbar
+{
+	float: left;
+	margin: auto;
+	background: #91CCFF;
+	width: 18%;
+	height: auto;
+	padding: 8px;
+	border: 3px solid #FE6F4C;
+	border-radius: 10px;
+    position:fixed;
+}
+
+#nav 
+{
+	width: 100%;
+	padding: 0 0 2px 0;
+	margin-bottom: 2px;
+	font-family: calibri;
+	font-size: 13px;
+	color: black;
+	letter-spacing: 2px;
+	text-align: left;
+}
+
+#nav ul
+{
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	border: none;
+}
+
+#nav li
+{
+	margin: 3px;
+	border-bottom-width: 1px;
+	border-bottom-style: solid;
+	border-bottom-color: black;
+}
+
+#nav li a
+{
+	display: block;
+	padding: 5px 5px 5px 5px;
+	background-color: black;
+	color: white;
+	text-decoration: none;
+	width: 100%;
+	border-right-width: 10px;
+	border-left-width: 10px;
+	border-right-style: solid;
+	border-left-style: solid;
+	border-right-color: white;
+	border-left-color: white;
+}
+
+#nav li a:hover
+{
+	background-color: white;
+	color: black;
+	border-right-width: 0px;
+	border-left-width: 80px;
+	border-right-style: solid;
+	border-left-style: solid;
+	border-right-color: black;
+	border-left-color: black;
+	text-align: right;
+}
+
+.sideHeader
+{
+    background-color: #FE6F4C;
+	text-transform: uppercase;
+    text-align: right;
+    font-size: 20px;
+    color: white;
+}
+
+
+/* 4. Content */
+
+.content-text
+{
+	background-color: white;
+	width: 100%;
+	height: auto;
+	border: 1px solid black;
+	padding: 9px;
+    margin-top:20px;
+	
+	font-family: calibri;
+	letter-spacing: 2px;
+	line-height: 20px;
+}
+
+.content-title
+{
+    background-color: #91CCFF;
+	width: 100px;
+	height: auto;
+	font-family: calibri; 
+	color: #FE6F4C;
+	letter-spacing: 3px;
+	text-shadow: 2px 2px 1px black;
+	border-left-width: 20px;
+	border-left-style: solid;
+	border-left-color: black;
+	border-top: 1px solid black;
+	border-right: 1px solid black;
+	border-bottom: 1px solid black;
+	box-shadow: 2px 2px 5px #fe6f4c;
+	padding: 4px;
+    position: absolute;
+}
+
+
+.content-figure-wrap
+{
+    border: 2px solid black;
+	  height: auto;
+	  padding: 10px;
+      background-color: #fff;
+}
+
+.content-figure-header
+{
+    background-color: #91CCFF;
+	  color: #FE6F4C;
+	  text-transform: uppercase;
+	  text-align: center;
+	  font-size: 20px;
+	  margin-top: -10px;
+	  margin-left: -10px;
+	  margin-right: -10px;
+}
+
+
+/* 6. Buttons */
+
+.btnAffirmative
+{
+    background: #FE6F4C;
+	padding: 7px;
+	font-family: corbel;
+	color: white;
+	width: 100%;
+	display: inline-block;
+	border: 1px solid white;
+	font-size: 20px;
+	letter-spacing: 2px;
+}
+
+.btnCancel
+{
+    background: #fff;
+	padding: 7px;
+	font-family: corbel;
+	color: black;
+	width: 100%;
+	display: inline-block;
+	border: 2px solid #fe6f4c;
+	font-size: 20px;
+	letter-spacing: 2px;
+}
+
+button:hover
+{
+    background: #000;
+	padding: 7px;
+	font-family: corbel;
+	color: white;
+	width: 100%;
+	display: inline-block;
+	border: 2px solid #fe6f4c;
+	font-size: 20px;
+	letter-spacing: 2px;
+}
+
+
+/* 7. Browse */
+  .browse-display
+  {
+	  border-bottom: 1px dotted black;
+	  padding: 8px;
+  }
+  
+  .pub-title
+  {
+	  font-family: corbel;
+	  font-size: 15px;
+	  letter-spacing: 2px;
+	  font-weight: bold;
+	  color: #000;
+  }
+  
+  .pub-desc
+  {
+	  font-family: corbel;
+	  font-size: 12px;
+	  color: #888;
+  }
+  
+  .pub-syn
+  {
+	  font-family: verdana;
+	  font-size: 12px;
+	  color: #000;
+  }
+
+  /* 8. Register */
+  #signup-body
+  {
+	  background-color: white;
+	  border-bottom: 10px solid #91CCFF;
+      border-top: 10px solid #91CCFF;
+	  border-right: 3px dashed #91CCFF;
+      border-left: 3px dashed #91CCFF;
+	  height: auto;
+	  padding-top: 10px;
+	  padding-bottom: 10px;
+	  padding-right: 20px;
+	  padding-left:20px;
+  }
+  
+  .signup-wrap
+  {
+	  border: 2px solid black;
+	  height: auto;
+	  padding: 10px;
+  }
+  
+  input[type=text], input[type=password]
+  {
+	  padding: 7px;
+	  margin: 5px 0 22px 0;
+	  display: inline-block;
+	  border: 1px solid;
+	  border-color: #000;
+	  width: auto;
+  }
+
+  /* 9. Admin */
+#topnav-admin
+{
+    background-color: #612849;
+    margin-top: -10px;
+    margin-left:-10px;
+    margin-right: -10px;
+    width: 101.2%;
+    display: flex;
+    padding: 10px 20% 6px 40%;
+}
+
+#adNavbar
+{
+	float: left;
+	margin: auto;
+	background: #612849;
+	width: 18%;
+	height: auto;
+	padding: 8px;
+	border: 3px solid #FE6F4C;
+	border-radius: 10px;
+    position:fixed;
+}
+
+.admin-content-wrap
+{
+    border: 2px solid #8E93EF;
+	  height: auto;
+	  padding: 10px;
+      background-color: #fff;
+}
+
+.admin-content-header
+{
+    background-color: #612849;
+	  color: #fff;
+	  text-transform: uppercase;
+	  text-align: center;
+	  font-size: 20px;
+	  margin-top: -10px;
+	  margin-left: -10px;
+	  margin-right: -10px;
+}
+
+.btnAdminAffirmative
+{
+    background: #8E93EF;
+	padding: 7px;
+	font-family: corbel;
+	color: white;
+	width: 100%;
+	display: inline-block;
+	border: 1px solid white;
+	font-size: 20px;
+	letter-spacing: 2px;
+}
+
+.btnAdminCancel
+{
+    background: #fff;
+	padding: 7px;
+	font-family: corbel;
+	color: black;
+	width: 100%;
+	display: inline-block;
+	border: 2px solid #612849;
+	font-size: 20px;
+	letter-spacing: 2px;
+}
+
+.btnSearch
+{
+    background: #91CCFF;
+    padding: 2px;
+    border: 0;
+}
